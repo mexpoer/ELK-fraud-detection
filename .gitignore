@@ -1,0 +1,12 @@
+# .NET build artifacts
+bin/
+obj/
+
+# Logs and data 
+logs/
+elasticsearch/data/
+prometheus/data/
+grafana/data/
+
+# Environment files
+.env

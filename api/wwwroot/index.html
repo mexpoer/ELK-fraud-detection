@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Log API</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 0; padding: 0;}
+        .container { max-width: 600px; margin: 80px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);}
+        h1 { color: #246; }
+        label { font-weight: bold; }
+        .status { margin-top: 1em; color: green; }
+    </style>
+    <script>
+        async function sendLog() {
+            const data = document.getElementById('logdata').value;
+            const res = await fetch('/transaction', {
+                method: 'POST',
+                body: data
+            });
+            const result = await res.json();
+            document.getElementById('status').innerText = result.status === 'logged' ? 'Log submitted!' : 'Error submitting log';
+        }
+    </script>
+</head>
+<body>
+    <div class='container'>
+        <h1>Bank Log API</h1>
+        <p>Submit a log entry to <code>/transaction</code>:</p>
+        <textarea id='logdata' rows='4' style='width:100%;'></textarea><br>
+        <button onclick='sendLog()'>Submit Log</button>
+        <div class='status' id='status'></div>
+    </div>
+</body>
+</html>
