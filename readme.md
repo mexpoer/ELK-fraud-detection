@@ -26,6 +26,7 @@ Developed as part of a one-month internship at a bank.
    - Kibana: [http://localhost:5601](http://localhost:5601)
    - Grafana: [http://localhost:3000](http://localhost:3000)
    - Prometheus: [http://localhost:9090](http://localhost:9090)
+   - .NET: [http://localhost:5000](http://localhost:5000)
 
 ## Project Goals
 
