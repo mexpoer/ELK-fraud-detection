@@ -67,3 +67,4 @@ services:
       - "5000:5000"
     volumes:
       - ./logs/apilogs:/app/logs
+    profiles: ["dotnet"]

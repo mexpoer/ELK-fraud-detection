@@ -20,8 +20,8 @@ app.MapPost("/transaction", async (HttpContext http) =>
 {
     using var reader = new StreamReader(http.Request.Body);
     var body = await reader.ReadToEndAsync();
-    Directory.CreateDirectory("logs");
-    await File.AppendAllTextAsync("logs/app.log", $"{body}\n");
+    Directory.CreateDirectory("../logs/apilogs");
+    await File.AppendAllTextAsync("../logs/apilogs/app.log", $"{body}\n");
     return Results.Ok(new { status = "logged" });
 });
 
